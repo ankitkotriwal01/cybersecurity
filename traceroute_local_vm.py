@@ -1,4 +1,4 @@
-# traceroute.py
+# traceroute_local_vm.py
 
 """
 Description:
@@ -9,13 +9,13 @@ Author:
     Nishant Krishna
 
 Created:
-    31 May, 2022
+    06 July, 2022
 """
 
 from icmplib import traceroute
 
 
-class Traceroute:
+class TracerouteLocalVM:
     def check_traceroute(self, host) -> None:
 
         # hops will now store all the hops from the current host to the remote host. By default, max_hops is 30
@@ -39,5 +39,8 @@ class Traceroute:
 
 
 if __name__ == "__main__":
-    traceroute_check = Traceroute()
-    traceroute_check.check_traceroute('8.8.8.8')
+    traceroute_check = TracerouteLocalVM()
+
+    # Check Traceroute for the IP Addresses of the local VMs. Replace with your IP Address
+    traceroute_check.check_traceroute('172.25.120.171')
+    traceroute_check.check_traceroute('172.25.115.189')
